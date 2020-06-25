@@ -1,0 +1,169 @@
+theme: GoogleNet
+title: going deeper with convolutions
+url: https://arxiv.org/pdf/1409.4842.pdf
+ym: 2014-09
+
+theme: CNN
+title: very deep convolutional networks for large-scale image recognition
+url: https://arxiv.org/pdf/1409.1556.pdf
+ym: 2015-04
+
+theme: CNN residual(ResNet)
+title: deep residual learning for image recognition
+url: https://arxiv.org/pdf/1512.03385.pdf
+ym: 2015-12
+
+theme: aggregated ResNet
+title: aggregated residual transformations for deep neural networks
+url: https://arxiv.org/pdf/1611.05431.pdf
+ym: 2017-04
+
+theme: DenseNet
+title: densely connected convolutional networks
+url: https://arxiv.org/pdf/1608.06993.pdf
+ym: 2018-01
+
+theme: pooling functions
+title: generalizing pooling functions in convolutional neural networks: mixed, gated, and tree
+url: https://arxiv.org/pdf/1509.08985.pdf
+ym: 2015-10
+
+theme: batch normalization
+title: batch normalization: accelerating deep network training by reducing internal covariate shift
+url: https://arxiv.org/pdf/1502.03167.pdf
+ym: 2015-03
+
+theme: dropout
+title: dropout: a simple way to prevent neural networks from overfitting
+url: http://jmlr.org/papers/volume15/srivastava14a.old/srivastava14a.pdf
+ym: 2014-06
+
+theme: different type of ReLU
+title: delving deep into recifiers: surpassing human-level performance on imagenet classification
+url: https://arxiv.org/pdf/1502.01852.pdf
+ym: 2015-02
+
+theme: maxout
+title: maxout networks
+url: https://arxiv.org/pdf/1302.4389.pdf
+ym: 2013-09
+
+theme: U-net
+title: U-net: convolutional networks for biomedical image segmentation
+url: https://arxiv.org/pdf/1505.04597.pdf
+ym: 2015-05
+
+theme: one-shot learning
+title: siamese neural networks for one-shot image recognition
+url: https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf
+ym: 2015
+
+theme: DCGAN
+title: unsupervised representation learning with deep convolutional generative adversarial networks
+url: https://arxiv.org/pdf/1511.06434.pdf
+ym: 2016-01
+
+theme: VAE
+title: discrete variational autoencoders
+url: https://arxiv.org/pdf/1609.02200.pdf
+ym: 2017-04
+
+theme: GloVe
+title: GloVe: Global vectors for word representation
+url: https://nlp.stanford.edu/pubs/glove.pdf
+ym: 2014
+
+theme: RNN
+title: A guide to recurrent neural networks and backpropagation
+url: https://pdfs.semanticscholar.org/4b7a/0ba426690b08489a86038db161846ffcfaa9.pdf?_ga=2.66135596.328769271.1593059164-1333522675.1593059164
+ym: 2001-04
+
+theme: GF-RNN
+title: gated feedback recurrent neural networks
+url: https://arxiv.org/pdf/1502.02367.pdf
+ym: 2015-06
+
+theme: Attention
+title: attention is all you need
+url: https://arxiv.org/pdf/1706.03762.pdf
+ym: 2017-12
+
+theme: pointer-generator networks
+title: get to the point: summarization with pointer-generator networks
+url: https://arxiv.org/pdf/1704.04368.pdf
+ym: 2017-04
+
+theme: Neural Turing machine
+title: neural turing machines
+url: https://arxiv.org/pdf/1410.5401.pdf
+ym: 2014-12
+
+theme: recommender system
+title: deep learning based recommender system: a survey and new perspectives
+url: https://arxiv.org/pdf/1707.07435.pdf
+ym: 2019-07
+
+theme: ranking measures
+title: ranking measures and loss functions in learning to ranking
+url: https://papers.nips.cc/paper/3708-ranking-measures-and-loss-functions-in-learning-to-rank.pdf
+ym: 2009
+
+theme: recommender system
+title: hybrid recommender system based on autoencoders
+url: https://arxiv.org/pdf/1606.07659.pdf
+ym: 2017-12
+
+theme: recommender system
+title: graph convolutional matrix completion
+url: https://arxiv.org/pdf/1706.02263.pdf
+ym: 2017-10
+
+theme: recommender system
+title: a comprehensive survey on graph neural networks
+url: https://arxiv.org/pdf/1901.00596.pdf
+ym: 2019-12
+
+theme: language model(DSSM)
+title: learning deep structured semantic models for web search using clickthrough data
+url: https://posenhuang.github.io/papers/cikm2013_DSSM_fullversion.pdf
+ym: 2013-10
+
+theme: recommender system
+title: tag-aware personalized recommendation using a hybrid deep model
+url: https://www.ijcai.org/Proceedings/2017/0446.pdf
+ym: 2017
+
+theme: language model(BERT)
+title: BERT: pre-training of deep bi-directional transformers for language understanding
+url: https://arxiv.org/pdf/1810.04805.pdf
+ym: 2019-05
+
+theme: language model(compositional attention)
+title: compositional attention networks for machine reasoning
+url: https://arxiv.org/pdf/1803.03067.pdf
+ym: 2018-04
+
+theme: language model(transformer-XL)
+title: transformer-XL: attentive language models beyond a fixed-length context
+url: https://arxiv.org/pdf/1901.02860.pdf
+ym: 2019-06
+
+theme: language model(XLnet)
+title: XLNet: generalized autoregressive pretaining for language understanding
+url: https://arxiv.org/pdf/1906.08237.pdf
+ym: 2020-01
+
+theme: word embedding
+title: enriching word vectors with subword information
+url: https://arxiv.org/pdf/1607.04606.pdf
+ym: 2017-06
+
+theme: word embedding
+title: word mover's embedding: from word2vec to document embedding
+url: https://arxiv.org/pdf/1811.01713.pdf
+ym: 2018-10
+
+theme: word embedding
+title: from word embeddings to document distances
+url: http://proceedings.mlr.press/v37/kusnerb15.pdf
+ym: 2015-07
