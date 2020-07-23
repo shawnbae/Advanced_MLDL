@@ -12,6 +12,13 @@ import numpy as np
 max_features= 6000
 max_length= 400
 
+batch_size = 32
+embedding_dims = 60
+num_kernels = 260
+kernel_size = 3
+hidden_dims = 300
+epochs = 10
+
 (x_train, y_train), (x_test, y_test)= imdb.load_data(num_words= max_features)
 
 x_train = sequence.pad_sequences(x_train, maxlen=max_length)
@@ -38,7 +45,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam')
 
 hist = model.fit(x_train, y_train, 
                  batch_size=32, 
-                 epochs=10,
+                 epochs=1,
                  validation_data = (x_test, y_test))
 
 # 직렬 Embedding구조
@@ -61,7 +68,7 @@ model2.compile(loss= 'binary_crossentropy', optimizer= 'adam')
 
 hist2= model2.fit(x_train, y_train,
                   batch_size= 32,
-                  epochs=10,
+                  epochs=1,
                   validation_data= (x_test, y_test))
 
 # 병렬 Embedding History graph
@@ -81,3 +88,29 @@ plt.title("Loss history")
 plt.xlabel("epoch")
 plt.ylabel("loss")
 plt.show()
+
+# 병렬 predicting
+y_train_predprob = model.predict(x_train, batch_size=batch_size)
+y_test_predprob = model.predict(x_test, batch_size=batch_size)
+
+y_train_predclass= np.where(y_train_predprob> 0.5, 1, 0)
+y_test_predclass= np.where(y_test_predprob > 0.5, 1, 0)
+
+y_train_predclass.shape = y_train.shape
+y_test_predclass.shape = y_test.shape
+
+print (("Train accuracy:"),(np.round(accuracy_score(y_train,y_train_predclass),3)))  
+print (("Test accuracy:"),(np.round(accuracy_score(y_test,y_test_predclass),3)))     
+
+# 직렬 predicting
+y_train_predprob2 = model2.predict(x_train, batch_size=batch_size)
+y_test_predprob2 = model2.predict(x_test, batch_size=batch_size)
+
+y_train_predclass2= np.where(y_train_predprob2> 0.5, 1, 0)
+y_test_predclass2= np.where(y_test_predprob2 > 0.5, 1, 0)
+
+y_train_predclass2.shape = y_train.shape
+y_test_predclass2.shape = y_test.shape
+
+print (("Train accuracy:"),(np.round(accuracy_score(y_train,y_train_predclass2),3)))  
+print (("Test accuracy:"),(np.round(accuracy_score(y_test,y_test_predclass2),3)))     
