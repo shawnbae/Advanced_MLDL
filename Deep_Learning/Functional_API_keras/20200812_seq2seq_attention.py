@@ -5,13 +5,6 @@ from tensorflow.keras.models import Model
 import tensorflow.keras.backend as K
 import numpy as np
 
-# dataset
-print(word2idx)
-print(idx2word)
-print(trainXE)
-print(trainXD)
-print(trainYD)
-
 # Hyperparameter set
 VOCAB_SIZE= len(idx2word)
 EMB_SIZE= 128
