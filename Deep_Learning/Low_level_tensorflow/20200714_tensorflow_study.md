@@ -227,3 +227,43 @@ tf.nn.batch_norm_with_global_normalization()
 
 
 
+## Important Axis functions
+
+#### expand_dims
+
+> 크기가 1인 축을 하나 늘리는 역할을 한다.
+
+```python
+tf.expand_dims(Tensor, axis= 2) # axis가 2인 곳에 shape 1을 추가하여 차원을 늘리기
+```
+
+#### repeat_elements
+
+> 열을 복제한다.
+
+```python
+import tensorflow.keras.backend as K
+
+K.repeat_elements(Tensor, rep= 3, axis= 2) 
+# 축이 2에 해당하는 차원의 원소를 3번 복사하여 늘어놓는다.
+# 예를 들어 만약 Tensor의 크기가 (1,4,1,4)라면 (1,4,3,4)가 된다
+```
+
+#### Dot
+
+> Tensor의 내적
+
+```python
+from tensorflow.keras.layers import Dot
+
+Dot(axes= [2,1])([y,x])
+# y Tensor, x Tensor의 각각 2축, 1축에 해당하는 부분을 서로 Dot product한다.
+# 따라서 두 축에 해당하는 shape의 크기가 같아야 한다.
+# 그리고 Dot 함수는 자동으로 Transpose하여 계산한다.
+# 다만 수학적으로 행렬 이상의 개념에 Dot product라는 개념이 없기 때문에
+# 곱하여 더하는 개념이라고 생각하면 된다.
+# 예를 들어 y Tensor의 차원이 (1,4,3,4)이고
+# x Tensor의 차원이 (1,4,3)인 경우 axes를 (3,1)로 지정하여 곱하면
+# (1,4,3,3) 차원의 Tensor가 출력된다.
+```
+
