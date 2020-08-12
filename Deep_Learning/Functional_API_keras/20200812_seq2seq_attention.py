@@ -62,12 +62,7 @@ class Seq2seq(Model):
   def call(self, inputs, training=False, mask=None):
     if training is True:
       x, y = inputs
-
-      # LSTM으로 구현되었기 때문에 Hidden State와 Cell State를 출력으로 내준다.
       h, c = self.enc(x)
-
-      # Hidden state와 cell state, shifted output을 초기값으로 입력 받고
-      # 출력으로 나오는 y는 Decoder의 결과이기 때문에 전체 문장이 될 것이다.
       y, _, _ = self.dec((y, h, c))
       return y
 
