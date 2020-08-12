@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.layers import Input, LSTM, Dense, Reshape, Dot, Flatten, Concatenate
+from tensorflow.keras.layers import Input, LSTM, Dense, Reshape, Dot, Flatten, Concatenate, Activation
 from tensorflow.keras.layers import Embedding, TimeDistributed
 from tensorflow.keras.layers import Attention, AdditiveAttention
 from tensorflow.keras.models import Model
@@ -30,8 +30,6 @@ outputY = decOutput(dy2)
 
 # Low-level Attention
 attentionprocess_1= Dot(axes=2)([dy2,ey2])
-attentionprocess_2= Dense(10, activation= 'softmax')(attentionprocess_1)
-attentionprocess_2_new= tf.transpose(tf.expand_dims(attentionprocess_2, axis= 1),perm= [0,1,3,2])
-ey2_new= tf.expand_dims(ey2 ,axis=1)
-attentionprocess_3= tf.reshape(Dot(axes=2)([attentionprocess_2_new, ey2_new]),[-1,10,128])
+attentionprocess_2= Activation('softmax')(attentionprocess_1)
+attentionprocess_3= Dot(axes=1)([attentionprocess_2, ey2])
 attentionprocess_5= Concatenate(axis=2)([attentionprocess_3,dy2])
