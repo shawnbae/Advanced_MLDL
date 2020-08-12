@@ -75,30 +75,17 @@ class Seq2seq(Model):
       x = inputs
       h, c = self.enc(x)
 
-      # Decoder 단에 제일 먼저 sos를 넣어주게끔 tensor화시키고
       y = tf.convert_to_tensor(self.sos)
-      # shape을 맞춰주기 위한 작업이다.
       y = tf.reshape(y, (1, 1))
 
-      # 최대 64길이 까지 출력으로 받을 것이다.
       seq = tf.TensorArray(tf.int32, 64)
 
-      # tf.keras.Model에 의해서 call 함수는 auto graph모델로 변환이 되게 되는데,
-      # 이때, tf.range를 사용해 for문이나 while문을 작성시 내부적으로 tf 함수로 되어있다면
-      # 그 for문과 while문이 굉장히 효율적으로 된다.
       for idx in tf.range(64):
         y, h, c = self.dec([y, h, c])
-        # 아래 두가지 작업은 test data를 예측하므로 처음 예측한값을 다시 다음 step의 입력으로 넣어주어야하기에 해야하는 작업이다.
-        # 위의 출력으로 나온 y는 softmax를 지나서 나온 값이므로
-        # 가장 높은 값의 index값을 tf.int32로 형변환해주고
-        # 위에서 만들어 놓았던 TensorArray에 idx에 y를 추가해준다.
         y = tf.cast(tf.argmax(y, axis=-1), dtype=tf.int32)
-        # 위의 값을 그대로 넣어주게 되면 Dimension이 하나밖에 없어서
-        # 실제로 네트워크를 사용할 때 Batch를 고려해서 사용해야 하기 때문에 (1,1)으로 설정해 준다.
         y = tf.reshape(y, (1, 1))
         seq = seq.write(idx, y)
 
         if y == self.eos:
-          break
-      # stack은 그동안 TensorArray로 받은 값을 쌓아주는 작업을 한다.    
+          break 
       return tf.reshape(seq.stack(), (1, 64))
