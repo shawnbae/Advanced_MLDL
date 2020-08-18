@@ -177,4 +177,4 @@ outputs = layers.Dense(1, activation="sigmoid")(x)
 model = keras.Model(inputs=inputs, outputs=outputs)
 model.compile(loss= 'binary_crossentropy',optimizer= 'adam')
 
-model.fit(movie_input, movie_label, epochs= 10, batch_size= 100)
+model.fit(movie_input, movie_label, epochs= 2, batch_size= 100)
