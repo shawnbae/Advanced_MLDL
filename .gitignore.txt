@@ -1,5 +1,6 @@
 ###### ignore 폴더 및 파일
 dataset/
+dataset/heartattack
 */dataset/*
 
 # Created by https://www.gitignore.io/api/venv,python,jupyternotebooks
@@ -10,6 +11,7 @@ dataset/
 # website: http://jupyter.org/
 
 .ipynb_checkpoints
+Machine_Learning/.ipynb_checkpoints
 */.ipynb_checkpoints/*
 
 # IPython
