@@ -11,7 +11,7 @@ dataset/heartattack
 # website: http://jupyter.org/
 
 .ipynb_checkpoints
-Machine_Learning/.ipynb_checkpoints
+Machine_Learning/.ipynb_checkpoints/
 */.ipynb_checkpoints/*
 
 # IPython
